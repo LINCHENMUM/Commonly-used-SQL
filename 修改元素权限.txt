@@ -1,0 +1,4 @@
+update sys30_permission set iswrite=0,ishide=1,isread=0,ismandetory=0 where elementid in (
+'etlblPortInMsisdn','ettxtPortInMsisdn',
+ 'etlblExceptPortInDate','etdpExceptPortInDate'
+) and roleid in (select  roleid from sys25_role where dealerid=380000)

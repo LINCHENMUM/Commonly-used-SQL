@@ -1,0 +1,40 @@
+select * from crm_dealers where dealernode like '%NLD%'
+
+select * from CRM_MOBILE_SIMCARDS where IMSI1='204164041000095'
+
+select * from CRM_CUSTOMERS_RESOURCEMB where resource='31632000398'
+
+
+select * from CRM_CUSTOMERS where CUSTOMERID=1045977
+ICC='893105071000000105'
+
+893105071000000105	204164041000095
+
+select * from CRM_DEALERS where DEALERID=360000
+
+select * from SYS_NPM where resource='31632000398'
+select * from SYS_NPM_PROPERTY where resource='31632000398'
+update SYS_NPM_PROPERTY set StatusID=8 where resource='31632000398'
+select * from CRM_MOBILE_SIMCARDS where IMSI1='204164041000095'
+
+update CRM_MOBILE_SIMCARDS set status=8 where IMSI1='204164041000095'
+
+893105071000000105	204164041000095
+
+select * from SYS_NPM_DEALER where resource='31632000398'
+
+update SYS_NPM_DEALER set dealerid=350000 where id=1000056501 and resource='31632000398'
+
+367001
+
+31632000300
+
+select * from CRM_DEALERS_ICCID
+select * from CRM_DEALERS_IMSI
+select * from CRM_MOBILE_SIMCARDS where ICCID=''
+
+
+select * from HLR_ROAMING_NOTIFICATION
+
+
+31632280005

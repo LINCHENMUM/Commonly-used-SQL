@@ -1,0 +1,19 @@
+SELECT * FROM SYS25_USER_ROLE with(nolock) WHERE USERID=1300000233 order by RoleID 
+
+select   * from SYS25_ROLE where dealerid=420000 and roleid in(SELECT   roleid FROM SYS25_USER_ROLE WHERE USERID=1300000233) order by RoleID 
+
+SELECT * FROM SYS25_MODULE 
+WHERE ModuleID in(select   ModuleID from SYS25_ROLE where dealerid=420000 and roleid in(SELECT   roleid FROM SYS25_USER_ROLE WHERE USERID=1300000233)) order by MODULEFULLPATH
+
+SELECT * FROM SYS25_MODULE_MVNO WHERE   MVNOID = '420000' and MODULEFULLNAME  in(select MODULEFULLPATH  FROM SYS25_MODULE 
+WHERE ModuleID in(select   ModuleID from SYS25_ROLE where dealerid=420000 and roleid in(SELECT   roleid FROM SYS25_USER_ROLE WHERE USERID=1300000233)) ) order by MODULEFULLNAME
+
+select    SHOWMODULEID,FULLCLASSNAME ,COUNT(*) from  SYS25_MODULE_ELEMENTS  where FULLCLASSNAME  IN( select MODULEFULLPATH  FROM SYS25_MODULE 
+WHERE ModuleID in(select   ModuleID from SYS25_ROLE where dealerid=420000 and roleid in(SELECT   roleid FROM SYS25_USER_ROLE WHERE USERID=1300000233))) group by SHOWMODULEID,FULLCLASSNAME 
+
+ select RoleID,COUNT(*) from SYS30_PERMISSION where RoleID  in(SELECT   roleid FROM SYS25_USER_ROLE WHERE USERID=1300000233)  group by RoleID  
+ order by RoleID 
+ 
+ 
+ select FormFullName,COUNT(*) from  sys_multilingual where FormFullName in (select MODULEFULLPATH  FROM SYS25_MODULE 
+WHERE ModuleID in(select   ModuleID from SYS25_ROLE where dealerid=420000 and roleid in(SELECT   roleid FROM SYS25_USER_ROLE WHERE USERID=1300000233))) group by FormFullName

@@ -1,0 +1,9 @@
+insert into Sys25_Performance_Trace_Config(ID,AssembleName,ClassName,MethodName,IsTrace,CreateUserID,CreateDate)
+values((select MAX(id)+1 from Sys25_Performance_Trace_Config),'ETalk.CRM.Customer.Server','ETalk.CRM.Customer.BLL.CustomerCareBO','SearchAndGetCount',1,14,CURRENT_TIMESTAMP)
+go
+
+insert into Sys25_Performance_Trace_Config(ID,AssembleName,ClassName,MethodName,IsTrace,CreateUserID,CreateDate)
+values((select MAX(id)+1 from Sys25_Performance_Trace_Config),'ETalk.CRM.Customer.Server','ETalk.CRM.Customer.BLL.CustomerCareBO','AdvanceSearchAndGetAdvanceCount',1,14,CURRENT_TIMESTAMP)
+go
+
+≤Â»Î∫Û÷ÿ∆ÙIIS

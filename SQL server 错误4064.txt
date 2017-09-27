@@ -1,0 +1,19 @@
+Microsoft Windows [Version 6.0.6002]
+Copyright (c) 2006 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Administrator>sqlcmd -S WIN-JI02S7S4KZF -d master -U SQLLogin -P CRM25
+Msg 18456, Level 14, State 1, Server WIN-JI02S7S4KZF, Line 1
+Login failed for user 'SQLLogin'.
+
+C:\Users\Administrator>sqlcmd -S WIN-JI02S7S4KZF -d master -U crm25 -P CRM25
+1>
+2> exit
+
+C:\Users\Administrator>sqlcmd -S WIN-JI02S7S4KZF -d master -U [crm25] -P CRM25
+Msg 18456, Level 14, State 1, Server WIN-JI02S7S4KZF, Line 1
+Login failed for user '[crm25]'.
+
+C:\Users\Administrator>sqlcmd -S WIN-JI02S7S4KZF -d master -U crm25 -P CRM25
+1> ALTER LOGIN crm25 WITH DEFAULT_DATABASE=MASTER
+2> GO
+1>

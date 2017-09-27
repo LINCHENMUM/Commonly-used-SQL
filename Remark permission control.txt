@@ -1,0 +1,7 @@
+EXEC USPOUTPUT_FORM_ELEMENT 'ETalk.CRM.UI.Customer.Ben.Remarks.RemarksInformation','vsbAddAttachFile','Add Attachment',15
+EXEC USPOUTPUT_FORM_ELEMENT 'ETalk.CRM.UI.Customer.Ben.Remarks.RemarksInformation','vsbRemoveAttachFile','Remove Attachment',15
+EXEC USPOUTPUT_FORM_ELEMENT 'ETalk.CRM.UI.Customer.Ben.Remarks.RemarksInformation','vsbDownLoadFile','Download Attachment',15
+
+EXEC USPOUTPUT_FORM_ELEMENT 'ETalk.CRM.UI.Customer.Base.Remarks.RemarksInformation','vsbAddAttachFile','Add Attachment',15
+EXEC USPOUTPUT_FORM_ELEMENT 'ETalk.CRM.UI.Customer.Base.Remarks.RemarksInformation','vsbRemoveAttachFile','Remove Attachment',15
+EXEC USPOUTPUT_FORM_ELEMENT 'ETalk.CRM.UI.Customer.Base.Remarks.RemarksInformation','vsbDownLoadFile','Download Attachment',15

@@ -1,0 +1,1 @@
+select   a.name,b.name   from   sysobjects   a,sysindexes   b   where   a.type= 'U'   and   a.id=b.id  and b.name ='PK_RM_OPERATORCODE'

@@ -1,0 +1,16 @@
+select * from CRM_ROAMING_SETTING
+
+--Orbitel WHITE LIST
+select * from HLR_MSISDN_USESCOPE where msisdn in (
+select resource from crm_customers_resourcemb where customerid in (
+select CUSTOMERID from crm_customers where DEALERID in (
+SELECT DEALERID FROM CRM_DEALERS WHERE FISCALUNITID=150000 
+))
+)
+select * from CRM_ROAMING_BLACKLIST 
+
+select * from CRM_ROAMING_BLACKLIST a, HLR_MSISDN_USESCOPE b
+where a.msisdn=b.msisdn
+
+
+Test MSISDN: 34602491131

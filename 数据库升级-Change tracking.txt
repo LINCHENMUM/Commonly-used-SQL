@@ -1,0 +1,7 @@
+192.168.10.81: 10.0.1600.22	RTM	Standard Edition (64-bit)
+192.168.10.9:  10.0.2531.0	SP1	Standard Edition (64-bit)
+10.0.2531.0	SP1	Standard Edition (64-bit)
+10.0.2799.0	SP1	Standard Edition (64-bit)
+SELECT SERVERPROPERTY('productversion'), SERVERPROPERTY ('productlevel'), SERVERPROPERTY ('edition')
+
+CRM252011cs

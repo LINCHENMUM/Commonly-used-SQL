@@ -1,0 +1,5 @@
+INSERT INTO SYS_MULTILINGUAL VALUES((select isnull(MAX(id),1000000000)+1 from SYS_MULTILINGUAL where ID like '10%'), 
+	-1, 1033, 'Common', 'Common', 'ASL', 'API Balance adjustment', 'API Balance adjustment', 8, '', 'API Balance adjustment', GETDATE(), 1, 12307, NULL, NULL, '', 1)
+
+INSERT INTO SYS_MULTILINGUAL VALUES((select isnull(MAX(id),1000000000)+1 from SYS_MULTILINGUAL where ID like '10%'), 
+	-1, 1033, 'Common', 'Common', 'MIN', 'Ben API Top Type', 'Ben API Top Type', 8, '', 'Ben API Top Type', GETDATE(), 1, 12307, NULL, NULL, '', 1)

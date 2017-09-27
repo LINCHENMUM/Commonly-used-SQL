@@ -1,0 +1,40 @@
+DECLARE CUSTOERIDCURSOR CURSOR scroll dynamic
+
+FOR 
+
+SELECT CUSTOMERID
+
+from CRM_CUSTOMERS_MAPPING
+
+where  not exists(
+
+select * from crm_customers
+
+where CRM_CUSTOMERS.CUSTOMERID=CRM_CUSTOMERS_MAPPING.CUSTOMERID
+
+) 
+
+open CUSTOERIDCURSOR
+
+declare @CUSTOMERID INT
+
+fetch next from CUSTOERIDCURSOR into @CUSTOMERID
+
+while(@@fetch_status=0)
+
+  begin
+
+    exec dbo.USP_CRM_DELETE_ONE_CUSTOMER_SAM_TEMP @CUSTOMERID
+
+    fetch next from CUSTOERIDCURSOR into @CUSTOMERID
+
+  end
+
+fetch first from CUSTOERIDCURSOR into @CUSTOMERID
+
+ 
+
+close CUSTOERIDCURSOR
+
+deallocate CUSTOERIDCURSOR
+

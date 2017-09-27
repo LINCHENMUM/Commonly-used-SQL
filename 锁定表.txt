@@ -1,0 +1,28 @@
+SET LOCK_TIMEOUT 1800
+
+锁一个表的某一行 
+
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED 
+
+SELECT * FROM table ROWLOCK WHERE id = 1 
+
+锁定数据库的一个表 
+
+SELECT * FROM table WITH (HOLDLOCK) 
+
+
+SELECT * FROM table WITH (HOLDLOCK) 其他事务可以读取表，但不能更新删除 
+
+SELECT * FROM table WITH (TABLOCKX) 其他事务不能读取表,更新和删除 
+
+
+
+SET   TRANSACTION   ISOLATION   LEVEL   REPEATABLE   READ 
+
+begin   tran 
+
+UPDATE CRM_DEALERS SET DEALERNODE='Default MVNO_UPDATE_44' WHERE DEALERID=100000 
+
+waitfor   delay   '00:05:00 ' 
+
+commit   tran 

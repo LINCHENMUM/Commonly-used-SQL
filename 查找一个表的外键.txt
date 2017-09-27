@@ -1,0 +1,13 @@
+SELECT 主键列ID=b.rkey
+    ,主键列名=(SELECT name FROM syscolumns WHERE colid=b.rkey AND id=b.rkeyid)
+    ,外键表ID=b.fkeyid
+    ,外键表名称=object_name(b.fkeyid)
+    ,外键列ID=b.fkey
+    ,外键列名=(SELECT name FROM syscolumns WHERE colid=b.fkey AND id=b.fkeyid)
+    ,级联更新=ObjectProperty(a.id,'CnstIsUpdateCascade')
+    ,级联删除=ObjectProperty(a.id,'CnstIsDeleteCascade')
+FROM sysobjects a
+    join sysforeignkeys b on a.id=b.constid
+    join sysobjects c on a.parent_obj=c.id
+where a.xtype='f' AND c.xtype='U'
+    and object_name(b.rkeyid)='CRM_LIFECYCLE_SETTINGS'

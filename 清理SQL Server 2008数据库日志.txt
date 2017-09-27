@@ -1,0 +1,88 @@
+dbcc sqlperf(logspace)
+
+清理SQL Server 2008数据库日志 
+
+第一步, 在收缩前先查看日志的大小:
+
+SELECT *
+
+FROM sysfiles
+
+WHERE name LIKE ' % LOG %'
+
+GO
+
+ 
+
+第二步, 把数据库的恢复模式设成”简单”:
+
+ALTER DATABASE 库名 SET RECOVERY SIMPLE
+
+GO
+
+ 
+
+第三步, 运行checkpoint指令, 把dirty page写进数据库:
+
+CHECKPOINT
+
+GO
+
+ 
+
+第四步, 截断日志: 
+
+BACKUP LOG 库名 WITH NO_LOG
+
+GO
+
+ 
+
+第五步, 记录一下日志名为下一步做准备:
+
+ 
+
+SELECT Name
+
+FROM sysfiles
+
+WHERE name LIKE ' % LOG'
+
+GO
+ 
+
+ 
+
+第六步, 收缩日志文件, 把不用的空间释放给操作系统:
+
+dbcc sqlperf(logspace)
+
+
+DBCC SHRINKFILE (文件名, 所需大小)
+
+GO
+
+ 
+
+第七步, 验证一下日志大小是否达到所需大小了:
+
+SELECT *
+
+FROM sysfiles
+
+WHERE name LIKE ' % LOG % '
+
+GO
+
+
+
+
+ 后续步骤:
+
+ 1)查看你的主要数据库, 看看日志增长是否失控;
+
+ 2)查看上面的代码, 并进行必要修改和测试以适应你的数据库要求;
+
+ 3)定期收缩数据库 ----(注: 慎用!! 不建议用在production环境里.)
+
+ 4)继续监控数据库大小和服务器上的可用空间大小. 

@@ -1,0 +1,20 @@
+
+
+update CRM_CUSTOMERS_RESOURCEMB set ENDDATE='2010-05-06 09:20:44.000' where RESOURCEID=1300000201
+
+update CRM_CUSTOMERS_RESOURCEMB set statusid=1,ENDDATE=null where RESOURCE=31632000078
+update SYS_NPM_PROPERTY set StatusID=1 where Resource='31632000078'
+update CRM_MOBILE_SIMCARDS  set status=8 where ICCID='893105049090104795'
+
+--No permission to access the msisdn
+select * from CRM_MNP_NPDB_ESVF where MSISDN ='34692999965'
+
+UPDATE CRM_MNP_NPDB_ESVF set OPERATORCODE='LEB' WHERE MSISDN ='34692999965'
+
+
+--select * from CRM_CUSTOMERS_PRODUCTS where CUSTOMERID=1104899
+update CRM_CUSTOMERS_PRODUCTS set ENDDATE='2010-04-20 15:14:48.000' where PRODUCTID=1000056962 and CUSTOMERID=1104899
+
+select * from crm_customers_services where customerid=1104899
+UPDATE crm_customers_services set ENDDATE=null where customerid=1104899 and PRODUCTID=1000056962
+UPDATE crm_customers_services set ENDDATE='2010-04-20 15:14:48.000' where customerid=1104899 and PRODUCTID=1000056962

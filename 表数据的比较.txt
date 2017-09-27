@@ -1,0 +1,3 @@
+集合相减用except
+集合相加用union
+集合相交用intersect(求2个集合的交集)

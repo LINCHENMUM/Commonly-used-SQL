@@ -1,0 +1,7 @@
+
+解决SQL Server 2000 错误15023:当前数据库中已存在用户或角色,SQLServer2000,错误15023
+
+Use CRM25_CUSTOMER
+
+go
+sp_change_users_login 'update_one', 'CRM25Test', 'CRM25Test'

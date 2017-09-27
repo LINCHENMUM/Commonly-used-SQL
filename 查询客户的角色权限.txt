@@ -1,0 +1,11 @@
+select * from sys30_permission where fullclassname like '%infoform%' and elementid like '%tsbAddCustomer%' and roleid in 
+ (select roleid from sys25_user_role where userid =(select userid from sys25_user where username='mark@clubmobiel.com'))
+ 
+ select * from sys30_permission where fullclassname like '%infoform%' and elementid like '%tsbAddCustomer%' and roleid in 
+ (select roleid from sys25_user_role where userid =(select userid from sys25_user where username='michelvandervliet@gmail.com'))
+
+
+ DELETE from sys30_permission where fullclassname ='ETalk.CRM.UI.Customer.Bundle.ProductsInformation' and roleid=1300001435 and permissionid not in (
+  select MAX(permissionid) from sys30_permission where fullclassname ='ETalk.CRM.UI.Customer.Bundle.ProductsInformation' and roleid=1300001435 and ModuleID=1000000298 
+ group by ElementID
+ )

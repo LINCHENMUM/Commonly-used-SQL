@@ -1,0 +1,6 @@
+select * from SYS_MULTILINGUAL where FormFullName='ETalk.CRM.UI.Customer.Youfone.SettingInformation' and ControlID='etcbCustomerStatus' and DealerID=-1 and LanguageID=1033
+select * from SYS_MULTILINGUAL where FormFullName='ETalk.CRM.UI.Customer.Youfone.SimpleSettingInformation' and ControlID='etcbCustomerStatus' and DealerID=-1 and LanguageID=1033
+select * from SYS_MULTILINGUAL where FormFullName='ETalk.CRM.UI.Customer.Vodafone.SettingInformation' and ControlID='etcbCustomerStatus' and DealerID=-1 and LanguageID=1033
+select * from SYS_MULTILINGUAL where FormFullName='ETalk.CRM.UI.Customer.InfoForm' and ControlID='etcbPendingStatusValue' and DealerID=-1 and LanguageID=1033
+select * from SYS_MULTILINGUAL where FormFullName='ETalk.CRM.UI.Customer.Telecombination.BillingInformation' and ControlID='etcbCustomerStatus' and DealerID=-1 and LanguageID=1033
+select * from SYS_MULTILINGUAL where FormFullName='ETalk.CRM.UI.Customer.Telecombination.Flex.SettingInformation' and ControlID='etcbCustomerStatus' and DealerID=-1 and LanguageID=1033
